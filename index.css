@@ -1,6 +1,6 @@
 
         body {
-            background-color: #ffe6f2;
+            background-color: #fdd4e8;
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
@@ -12,11 +12,13 @@
         h1 {
             color: #d63384;
             font-size: 3em;
+            font-family: "Papyrus";
             margin-bottom: 10px;
         }
         p {
             color: #b80f50;
             font-size: 1.5em;
+            font-family: "Garamond";
         }
         .rose-image {
             width: 200px;
@@ -33,6 +35,7 @@
             border: none;
             border-radius: 25px;
             cursor: pointer;
+            font-family: "Lucida Console";
             text-decoration: none;
             transition: background 0.3s;
         }
