@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Chocolate Day</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a2e;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        header {
+            background-color: #e94560;
+            padding: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        .hero {
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?romantic,couples') no-repeat center;
+            background-size: cover;
+            position: relative;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .romantic-message {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ffcccb;
+            opacity: 0;
+            animation: fadeIn 3s forwards;
+        }
+        .floating-chocolates {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .chocolate {
+            position: absolute;
+            bottom: -10px;
+            font-size: 24px;
+            animation: floatUp 5s linear infinite;
+        }
+        .btn {
+            background-color: #e94560;
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff6b81;
+            transform: scale(1.1);
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Love is Sweet and Eternal! 🍫❤️</header>
+    <div class="hero">Celebrate Love and Sweetness</div>
+    <p class="romantic-message">"A moment with you is sweeter than a thousand chocolates!"</p>
+    <button class="btn" onclick="sendLove()">Send a Love Note 💌</button>
+    <div class="floating-chocolates"></div>
+    <script>
+        function sendLove() {
+            let name = prompt('Enter the name of your special someone:');
+            if (name) {
+                alert('Sending heartfelt love and chocolates to ' + name + '! 🍫❤️');
+            } else {
+                alert('Love is best when shared! Try again.');
+            }
+        }
+        
+        function createChocolate() {
+            const chocolate = document.createElement('div');
+            chocolate.classList.add('chocolate');
+            chocolate.innerHTML = '🍫';
+            chocolate.style.left = Math.random() * 100 + 'vw';
+            chocolate.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.querySelector('.floating-chocolates').appendChild(chocolate);
+            setTimeout(() => {
+                chocolate.remove();
+            }, 5000);
+        }
+        setInterval(createChocolate, 300);
+    </script>
+</body>
+</html>
